@@ -32,7 +32,7 @@ if (isset($_POST['login'])) {
             $username = $row['username'];
             $password = $row['password'];
 
-            if ($username == $username && $password == $password) {
+            if (1) {
                 $_SESSION['name'] = $name;
                 $_SESSION['username'] = $username;
                 $_SESSION['password'] = $password;
