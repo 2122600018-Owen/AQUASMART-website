@@ -24,11 +24,11 @@ if (isset($_POST['login'])) {
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_array($result);
             $name = $row['name'];
-            $username = $row['username'];
-            $password = $row['password'];
+            $username2 = $row['username'];
+            $password2 = $row['password'];
 
 
-            if ($username == $username && $password == $password) {
+            if ($username2 == $username && $password2 == $password) {
                 $_SESSION['name'] = $name;
                 $_SESSION['username'] = $username;
                 $_SESSION['password'] = $password;
