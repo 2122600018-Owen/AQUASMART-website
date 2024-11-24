@@ -6,8 +6,6 @@ if (isset($_POST['login'])) {
 
     $username = $_POST['username'];
     $password = md5($_POST['password']);
-    echo $password; echo "\n";
-    echo $username; echo "\n";
     $sql = "SELECT * FROM `tabl_user` WHERE `username`='$username' AND `password`='$password'";
     $result = mysqli_query($conn, $sql);
 
@@ -24,13 +22,11 @@ if (isset($_POST['login'])) {
         exit;
     } 
     else {
-        echo "[masuk di else awal]";
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_array($result);
             $name = $row['name'];
             $username = $row['username'];
             $password = $row['password'];
-            echo "[masuk di if 1]";
             if (1) {
                 $_SESSION['name'] = $name;
                 $_SESSION['username'] = $username;
