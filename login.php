@@ -38,6 +38,10 @@ if (isset($_POST['login'])) {
                 $_SESSION['password'] = $password;
                 header('location:welcome.php');
             }
+            else {
+                echo "<script>alert('Step 2 Invalid Username or Password');</script>";
+                exit;
+            }
         }
         else {
             echo "<script>alert('Invalid Username or Password');</script>";
