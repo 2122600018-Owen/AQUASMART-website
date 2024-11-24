@@ -37,10 +37,8 @@ if (isset($_POST['login'])) {
                 $_SESSION['name'] = $name;
                 $_SESSION['username'] = $username;
                 $_SESSION['password'] = $password;
-                header('location:welcome.php');
-                exit();
-                echo "[masuk di if 2]";
-                echo "[nama = "; echo $name; echo "]";
+                echo "<script>window.location.href='welcome.php';</script>";
+                exit;
             }
             else {
                 echo "<script>alert('Step 2 Invalid Username or Password');</script>";
