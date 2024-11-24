@@ -1,9 +1,9 @@
 <?php
 // Konfigurasi database
-$host = 'localhost'; // Sesuaikan dengan host database Anda
-$user = 'root'; // Username database
-$password = ''; // Password database
-$dbname = 'database_name'; // Nama database Anda
+$host = 'as-db.mysql.database.azure.com'; // Sesuaikan dengan host database Anda
+$user = 'zwfvqusiix'; // Username database
+$password = 'xKnW$jS1dx8SKF8S'; // Password database
+$dbname = 'aquasmart-database'; // Nama database Anda
 
 // Koneksi ke database
 $conn = new mysqli($host, $user, $password, $dbname);
@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 $solenoidState = isset($_POST['solenoidState']) ? intval($_POST['solenoidState']) : 0;
 
 // Update nilai di tabel tandon
-$sql = "UPDATE tandon SET solenoid_state = ? WHERE id = 1"; // Sesuaikan dengan struktur tabel Anda
+$sql = "UPDATE solenoidstate SET solenoid_state = ? WHERE id = 1"; // Sesuaikan dengan struktur tabel Anda
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $solenoidState);
 
