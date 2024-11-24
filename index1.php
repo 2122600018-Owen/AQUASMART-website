@@ -61,6 +61,10 @@
             </div>
             <div class="card-body">
               <h1 id="solenoidState" style="font-size: 100px">Loading...</h1>
+              <label class="form-check-label mt-3" for="solenoidToggle">Kontrol Solenoid</label>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="solenoidToggle">
+              </div>
             </div>
           </div>
         </div>
@@ -82,6 +86,23 @@
   });
 
   function fetchData() {
+    document.getElementById('solenoidToggle').addEventListener('change', function() {
+      // Ambil nilai dari toggle switch (0 atau 1)
+      const solenoidState = this.checked ? 1 : 0;
+
+      // Kirim nilai ke server melalui AJAX
+      $.ajax({
+        url: 'update_solenoid.php', // File PHP untuk mengupdate database
+        type: 'POST',
+        data: { solenoidState: solenoidState },
+        success: function(response) {
+          console.log('Data berhasil dikirim:', response);
+        },
+        error: function(xhr, status, error) {
+          console.error('Error mengirim data:', error);
+        }
+      });
+    });
     $.ajax({
       url: 'fetch_data.php', // Separate PHP file that returns JSON data for charts and states
       type: 'GET',
@@ -115,7 +136,7 @@
   }
 
   // Auto-refresh every 5 seconds
-  setInterval(fetchData, 5000);
+  setInterval(fetchData, 1000);
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
