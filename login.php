@@ -10,6 +10,7 @@ if (isset($_POST['login'])) {
     //echo $username; echo "\n";
     $sql = "SELECT * FROM `tbl_user` WHERE `username`='$username' AND `password`='$password'";
     $result = mysqli_query($conn, $sql);
+    echo mysqli_num_rows($result);
     //echo $result; echo "\n";
 
     if (empty($_POST['username']) && empty($_POST['password'])) {
