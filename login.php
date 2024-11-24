@@ -6,10 +6,11 @@ if (isset($_POST['login'])) {
 
     $username = $_POST['username'];
     $password = md5($_POST['password']);
-    echo $password;
-
+    echo \n $password;
+    echo \n %username;
     $sql = "SELECT * FROM `tbl_user` WHERE `username`='$username' AND `password`='$password'";
     $result = mysqli_query($conn, $sql);
+    echo \n $result
 
     if (empty($_POST['username']) && empty($_POST['password'])) {
         echo "<script>alert('Please Fill Username and Password');</script>";
@@ -30,7 +31,7 @@ if (isset($_POST['login'])) {
             $username = $row['username'];
             $password = $row['password'];
 
-            if (1) {
+            if ($username == $username && $password == $password) {
                 $_SESSION['name'] = $name;
                 $_SESSION['username'] = $username;
                 $_SESSION['password'] = $password;
