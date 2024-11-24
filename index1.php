@@ -105,7 +105,7 @@
           document.getElementById('pumpState').textContent = 'Mati';
         }
 
-        if (parsedData.solenoidState) {
+        if (parsedData.solenoidState == 1) {
           document.getElementById('solenoidState').textContent = 'Hidup';
         } else {
           document.getElementById('solenoidState').textContent = 'Mati';
