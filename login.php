@@ -26,6 +26,7 @@ if (isset($_POST['login'])) {
         exit;
     } 
     else {
+        echo "[masuk di else awal]";
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_array($result);
             $name = $row['name'];
@@ -37,6 +38,7 @@ if (isset($_POST['login'])) {
                 $_SESSION['username'] = $username;
                 $_SESSION['password'] = $password;
                 header('location:welcome.php');
+                exit();
                 echo "[masuk di if 2]";
                 echo "[nama = "; echo $name; echo "]";
             }
