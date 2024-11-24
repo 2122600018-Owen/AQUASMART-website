@@ -6,6 +6,7 @@ if (isset($_POST['login'])) {
 
     $username = $_POST['username'];
     $password = md5($_POST['password']);
+    echo $password;
 
     $sql = "SELECT * FROM `tbl_user` WHERE `username`='$username' AND `password`='$password'";
     $result = mysqli_query($conn, $sql);
