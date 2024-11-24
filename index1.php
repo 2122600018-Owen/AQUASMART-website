@@ -99,7 +99,7 @@
         //document.getElementById('pumpState').textContent = parsedData.pumpState ? 'Hidup' : 'Mati';
         //document.getElementById('solenoidState').textContent = parsedData.solenoidState ? 'Hidup' : 'Mati';
         
-        if (parsedData.pumpState) {
+        if (parsedData.pumpState == '1') {
           document.getElementById('pumpState').textContent = 'Hidup';
         } else {
           document.getElementById('pumpState').textContent = 'Mati';
