@@ -3,7 +3,7 @@
 $host = "as-db.mysql.database.azure.com";
 $user = "zwfvqusiix";
 $password = "xKnW$jS1dx8SKF8S";
-$database = "as-db";
+$database = "aquasmart-database";
 
 $conn = new mysqli($host, $user, $password, $database);
 
