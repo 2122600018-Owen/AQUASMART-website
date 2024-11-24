@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("as-db.mysql.database.azure.com", "zwfvqusiix", "xKnW$jS1dx8SKF8S", "aquasmart-database");
+$con = mysqli_connect("as-db.mysql.database.azure.com", "zwfvqusiix", 'xKnW$jS1dx8SKF8S', "aquasmart-database");
 
 $dataHistory = mysqli_query($con, "SELECT * FROM tandon ORDER BY id DESC LIMIT 10");
 $timeLabels = [];
