@@ -96,8 +96,20 @@
         flowRateChart.data.datasets[0].data = parsedData.flowRateData;
         flowRateChart.update();
 
-        document.getElementById('pumpState').textContent = parsedData.pumpState ? 'Hidup' : 'Mati';
-        document.getElementById('solenoidState').textContent = parsedData.solenoidState ? 'Hidup' : 'Mati';
+        //document.getElementById('pumpState').textContent = parsedData.pumpState ? 'Hidup' : 'Mati';
+        //document.getElementById('solenoidState').textContent = parsedData.solenoidState ? 'Hidup' : 'Mati';
+        
+        if (parsedData.pumpState) {
+          document.getElementById('pumpState').textContent = 'Hidup';
+        } else {
+          document.getElementById('pumpState').textContent = 'Mati';
+        }
+
+        if (parsedData.solenoidState) {
+          document.getElementById('solenoidState').textContent = 'Hidup';
+        } else {
+          document.getElementById('solenoidState').textContent = 'Mati';
+        }
       }
     });
   }
