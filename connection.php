@@ -8,7 +8,7 @@ $ssl_cert = 'DigiCertGlobalRootG2.crt.pem'; // Ganti dengan path SSL certificate
 
 // Membuat koneksi ke database MySQL Azure
 $conn = mysqli_init();
-mysqli_ssl_set($conn, NULL, NULL, $ssl_cert, NULL, NULL); // Mengaktifkan SSL
+//mysqli_ssl_set($conn, NULL, NULL, $ssl_cert, NULL, NULL); // Mengaktifkan SSL
 mysqli_real_connect($conn, $server, $username, $password, $database, 3306);
 
 // Periksa koneksi
