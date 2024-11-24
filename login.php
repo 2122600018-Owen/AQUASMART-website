@@ -6,11 +6,11 @@ if (isset($_POST['login'])) {
 
     $username = $_POST['username'];
     $password = md5($_POST['password']);
-    echo $password; echo "\n";
-    echo $username; echo "\n";
+    //echo $password; echo "\n";
+    //echo $username; echo "\n";
     $sql = "SELECT * FROM `tbl_user` WHERE `username`='$username' AND `password`='$password'";
     $result = mysqli_query($conn, $sql);
-    echo $result; echo "\n";
+    //echo $result; echo "\n";
 
     if (empty($_POST['username']) && empty($_POST['password'])) {
         echo "<script>alert('Please Fill Username and Password');</script>";
